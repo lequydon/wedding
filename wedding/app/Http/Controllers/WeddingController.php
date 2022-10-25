@@ -18,9 +18,23 @@ class WeddingController extends Controller
         //
     }
     public function wedding(Request $request){
-        dd($request);
+        $folder=explode('\\',public_path('images'))[8]."/";
+        $folderPublic=public_path('images');
+        $bannerTextImgFile=$folder.$request->bannerTextImg->getClientOriginalName();
+        $bannerImgFile=$folder.$request->bannerImg->getClientOriginalName();
+        $backgroundImgFile=$folder.$request->backgroundImg->getClientOriginalName();
+        $request->bannerTextImg->move($folderPublic,$request->bannerTextImg->getClientOriginalName());
+        $request->bannerImg->move($folderPublic,$request->bannerImg->getClientOriginalName());
+        $request->backgroundImg->move($folderPublic,$request->backgroundImg->getClientOriginalName());
         DB::table('wedding')->insert([
-            ['headerText' => $request->headerText, 'headerDate' => $request->headerDate]
+            ['headertext' => $request->headerText, 'headerdate' => $request->headerDate,'bannertextimg' => $bannerTextImgFile,
+            'bannerimg' => $bannerImgFile,'bridename' => $request->brideName,
+            'groomname' => $request->groomName,'backgroundimg' => $backgroundImgFile,'groomfacebook' => $request->facebookGroom,
+            'bridefacebook' => $request->facebookBride,'datewedding' => $request->dateWedding,'youtubelink' => $request->youtubeLink,
+            'map' => $request->map]
         ]);
+        foreach($item as $request->storyList){
+            
+        }
     }
 }
