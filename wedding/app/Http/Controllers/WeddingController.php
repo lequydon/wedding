@@ -18,7 +18,9 @@ class WeddingController extends Controller
         //
     }
     public function wedding(Request $request){
-        $folder=explode('\\',public_path('images'))[8]."/";
+        DB::table('wedding')->truncate();
+        DB::table('file')->truncate();
+        $folder=explode('\\',public_path('images'))[count(explode('\\',public_path('images')))-1]."/";
         $folderPublic=public_path('images');
         $bannerTextImgFile=$folder.$request->bannerTextImg->getClientOriginalName();
         $bannerImgFile=$folder.$request->bannerImg->getClientOriginalName();
@@ -33,8 +35,26 @@ class WeddingController extends Controller
             'bridefacebook' => $request->facebookBride,'datewedding' => $request->dateWedding,'youtubelink' => $request->youtubeLink,
             'map' => $request->map]
         ]);
-        foreach($item as $request->storyList){
-            
+        foreach($request->storyList as $item){
+            $storyImgFile=$folder.$item['storyImg']->getClientOriginalName();
+            $folder.$item['storyImg']->move($folderPublic,$item['storyImg']->getClientOriginalName());
+            DB::table('file')->insert([
+                ['wedding_file_id' => 1,'datetext'=>$item['dateText'],'titletext'=>$item['titleText'],'contenttext'=>$item['contentText'],'urlimage'=>$storyImgFile]
+            ]);
+        }
+        foreach($request->scheduleList as $item){
+            $storyImgFile=$folder.$item['storyImg']->getClientOriginalName();
+            $folder.$item['storyImg']->move($folderPublic,$item['storyImg']->getClientOriginalName());
+            DB::table('file')->insert([
+                ['wedding_file_id' => 1,'datetext'=>$item['dateText'],'titletext'=>$item['titleText'],'contenttext'=>$item['contentText'],'urlimage'=>$storyImgFile]
+            ]);
+        }
+        foreach($request->listPhoto as $item){
+            $storyImgFile=$folder.$item['photoFile']->getClientOriginalName();
+            $folder.$item['photoFile']->move($folderPublic,$item['photoFile']->getClientOriginalName());
+            DB::table('file')->insert([
+                ['urlimage'=>$storyImgFile]
+            ]);
         }
     }
 }
