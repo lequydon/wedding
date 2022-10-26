@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/wedding', [WeddingController::class, 'wedding']); 
+Route::get('/wedding', [WeddingController::class, 'weddingGet']); 

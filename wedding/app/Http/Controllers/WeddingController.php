@@ -57,4 +57,14 @@ class WeddingController extends Controller
             ]);
         }
     }
+    public function weddingGet(){
+        $wedding=DB::table('wedding')->get()->first();
+        $storyList=DB::table('file')->where('wedding_file_id','=',1)->get()->toArray();
+        $scheduleList=DB::table('file')->where('wedding_file_id','=',2)->get()->toArray();
+        $listPhoto=DB::table('file')->where('wedding_file_id','=',3)->get()->toArray();
+        $wedding->storyList=$storyList;
+        $wedding->scheduleList=$scheduleList;
+        $wedding->listPhoto=$listPhoto;
+        return $wedding;
+    }
 }
