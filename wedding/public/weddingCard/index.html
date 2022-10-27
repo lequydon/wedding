@@ -7,23 +7,51 @@
     <title>wedding card</title>
 </head>
 <style>
-html, body
-{
-    height: 100%;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
+img{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    width: 100%;
 }
-.backgound-img{
-    margin: 3%;
-    margin-top: 20%;
-    background-image:url("5dd6c999ab10a.png");
-    background-size: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
+.backgound{
+    padding: 2%;
+    margin-top: 10%;
+}
+.text-name{
+    font-size: 5vw; 
+}
+.text{
+    position: absolute;
+}
+@media only screen and (min-width: 800px) {
+    img{
+        width: 600px;
+    }
+    .backgound{
+        margin: 0 auto;
+        text-align: center;
+    }
 }
 </style>
 <body>
-    <div class="backgound-img"></div>
+    <div class="backgound">
+        <img src="5dd6c999ab10a.png">
+        <div class="text">
+            <div class="text-name">
+                <div>Olivia</div>
+                <div>&</div>
+                <div>Alex</div>
+            </div>
+            <div class="title">together with their families
+                invite you to their wedding</div>
+            <div class="date-wedding">
+                <div class="date">Sunday 15 July</div>
+                <div class="year">2020</div>
+                <div class="time">six o’clock in the evening</div>
+            </div>
+            <div class="address">New Community Centre
+                2876 City road, Washingtone</div>
+            <div class="Reception">Reception to follow</div>
+        </div>
+    </div>
 </body>
 </html>
