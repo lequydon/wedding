@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <title>wedding card</title>
 </head>
 <style>
@@ -25,7 +27,28 @@ img{
     margin-top: 10%;
 }
 .text-name{
+      text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+    background: linear-gradient(0deg, rgba(169,131,131,1) 0%, rgba(227,211,211,1) 43%, rgba(231,219,219,1) 56%, rgba(169,131,131,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
     font-size: clamp(25px,7vw,40px); 
+    font-family: 'WindSong', cursive;
+    font-weight: bold;
+}
+.title-invitation{
+    margin-top: 20px;
+    font-family: 'Great Vibes', cursive;
+    color: #a98383;
+    font-size: clamp(15px,7vw,30px); 
+}
+.title-cover{
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+    background: linear-gradient(0deg, rgba(169,131,131,1) 0%, rgba(227,211,211,1) 43%, rgba(231,219,219,1) 56%, rgba(169,131,131,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-size: clamp(25px,13vw,70px); 
     font-family: 'WindSong', cursive;
     font-weight: bold;
 }
@@ -37,37 +60,58 @@ img{
     transform: translate(-50%, -50%);
 }
 .title{
+    color: #a98383;
     font-size: clamp(15px,4vw,20px); 
     font-family: 'Nunito Sans', sans-serif;
 }
 .time{
+    color: #a98383;
     font-family: 'Nunito Sans', sans-serif;
 }
 .date{
+    background: linear-gradient(0deg, rgba(169,131,131,1) 0%, rgba(227,211,211,1) 43%, rgba(231,219,219,1) 56%, rgba(169,131,131,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
     font-family: 'Ms Madi', cursive;
     font-weight: bold;
     font-size: clamp(15px,5vw,30px); 
 }
 .year{
+    background: linear-gradient(0deg, rgba(169,131,131,1) 0%, rgba(227,211,211,1) 43%, rgba(231,219,219,1) 56%, rgba(169,131,131,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
     font-family: 'Kanit', sans-serif;
     font-size: clamp(15px,6vw,50px);
     /* font-size: 6vw; */
 }
 .address{
+    color: #a98383;
     font-family: 'Inconsolata', monospace;
 
 }
 .Reception{
+    color: #a98383;
     font-family: 'Dancing Script', cursive;
     font-size: clamp(15px,4vw,30px); 
 
 }
 .line{
+    background: linear-gradient(0deg, rgba(169,131,131,1) 0%, rgba(255,255,255,1) 43%, rgba(255,255,255,1) 56%, rgba(169,131,131,1) 100%);
     margin-top: 8px;
     margin-bottom: 10px;
     height: 10px;
     width: 100%;
-    background-color: aqua;
+}
+.invation{
+    font-size: clamp(15px,5vw,20px); 
+    color: #a98383;
+    font-family: 'Inconsolata', monospace;
+}
+.name-invation{
+    font-size: clamp(15px,5vw,20px); 
+    font-family: 'Dancing Script', cursive;
+    color: #a98383;
+
 }
 @media only screen and (min-width: 800px) {
     img{
@@ -84,6 +128,10 @@ img{
 
     .text{top: 48%;}
 }
+@media only screen and (max-width: 500px) {
+
+.text{top: 35%;}
+}
 @media only screen and (min-width: 700px) and (max-width: 800px) {
 
 .text{top: 50%;}
@@ -92,7 +140,7 @@ img{
 <body>
     <div class="backgound">
         <img src="5dd6c999ab10a.png">
-        <div class="text">
+        <div class="text" style="display: none">
             <div class="text-name">
                 <div>Quý Đôn</div>
                 <div>&</div>
@@ -110,6 +158,14 @@ img{
             <div class="address">New Community Centre
                 2876 City road, Washingtone</div>
             <div class="Reception">Reception to follow</div>
+        </div>
+        <div class="text">
+            <div>
+                <div class="title-cover">Thiệp Mời</div>
+                <div class="title-invitation">Wedding invitation</div>
+            </div>
+            <div class="invation">Trân trọng kính mời</div>
+            <div class="name-invation">Donlq</div>
         </div>
     </div>
 </body>
