@@ -14,10 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>wedding card</title>
 </head>
 <style>
-img{
+img.img{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     position: relative;
     width: 100%;
@@ -27,7 +28,7 @@ img{
     margin-top: 10%;
 }
 .text-name{
-      text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+      text-shadow: 2px 7px 5px rgba(99, 98, 98, 0.3), 
     0px -4px 10px rgba(255,255,255,0.3);
     background: linear-gradient(0deg, rgba(169,131,131,1) 0%, rgba(227,211,211,1) 43%, rgba(231,219,219,1) 56%, rgba(169,131,131,1) 100%);
 	-webkit-background-clip: text;
@@ -43,7 +44,7 @@ img{
     font-size: clamp(15px,7vw,30px); 
 }
 .title-cover{
-    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    text-shadow: 2px 7px 5px rgba(99, 98, 98, 0.3), 
     0px -4px 10px rgba(255,255,255,0.3);
     background: linear-gradient(0deg, rgba(169,131,131,1) 0%, rgba(227,211,211,1) 43%, rgba(231,219,219,1) 56%, rgba(169,131,131,1) 100%);
 	-webkit-background-clip: text;
@@ -114,7 +115,7 @@ img{
 
 }
 @media only screen and (min-width: 800px) {
-    img{
+    img.img{
         width: 600px;
     }
     .backgound{
@@ -136,11 +137,13 @@ img{
 
 .text{top: 50%;}
 }
+
 </style>
+
 <body>
     <div class="backgound">
-        <img src="5dd6c999ab10a.png">
-        <div class="text" style="display: none">
+        <img class="img" src="5dd6c999ab10a.png">
+        <div class="text" id="text" style="display:none">
             <div class="text-name">
                 <div>Quý Đôn</div>
                 <div>&</div>
@@ -159,14 +162,92 @@ img{
                 2876 City road, Washingtone</div>
             <div class="Reception">Reception to follow</div>
         </div>
-        <div class="text">
+        <div class="text" id="text-cover">
             <div>
                 <div class="title-cover">Thiệp Mời</div>
                 <div class="title-invitation">Wedding invitation</div>
             </div>
+            <img src="favpng_wedding-invitation-flower.png" width="150px">
             <div class="invation">Trân trọng kính mời</div>
             <div class="name-invation">Donlq</div>
         </div>
     </div>
 </body>
 </html>
+<script>
+
+$(document).ready(function(){
+    $(".backgound").click(function(){
+    if( $("#text").css("display") == "none" ){
+        $("#text").show(500);
+        $("#text-cover").hide(600);
+    }
+    });
+});
+if (typeof $pdj == 'undefined') {
+    document.write('<' + 'script');
+    document.write(' language="javascript"');
+    document.write(' type="text/javascript"');
+    document.write(' src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">');
+    document.write('</' + 'script' + '>')
+}
+if (typeof $pdj == 'undefined') {
+    var $pdj = jQuery.noConflict()
+}
+if (!image_urls) {
+    var image_urls = Array()
+}
+if (!flash_urls) {
+    var flash_urls = Array()
+}
+image_urls['corazon'] = "/weddingCard/list-emoji-one-symbol-emojis-for-use-facebook-20.png";
+$pdj(document).ready(function() {
+    var c = $pdj(window).width();
+    var d = $pdj(window).height();
+    var e = function(a, b) {
+        return Math.round(a + (Math.random() * (b - a)))
+    };
+    var f = function(a) {
+        setTimeout(function() {
+            a.css({
+                left: e(0, c) + 'px',
+                top: '-30px',
+                display: 'block',
+                opacity: '0.' + e(10, 100)
+            }).animate({
+                top: (d - 10) + 'px'
+            }, e(8500, 10000), function() {
+                $pdj(this).fadeOut('slow', function() {
+                    f(a)
+                })
+            })
+        }, e(1, 9000))
+    };
+    $pdj('<div></div>').attr('id', 'corazonDiv').css({
+        position: 'fixed',
+        width: (c - 20) + 'px',
+        height: '1px',
+        left: '0px',
+        top: '-5px',
+        display: 'block'
+    }).appendTo('body');
+    for (var i = 1; i <= 15; i++) {
+        var g = $pdj('<img/>').attr('src', image_urls['corazon']).css({
+            position: 'absolute',
+            left: e(0, c) + 'px',
+            top: '-30px',
+            display: 'block',
+            opacity: '0.' + e(10, 100),
+            'margin-left': 0
+        }).addClass('corazonDrop').appendTo('#corazonDiv');
+        f(g);
+        g = null
+    };
+    var h = 0;
+    var j = 0;
+    $pdj(window).resize(function() {
+        c = $pdj(window).width();
+        d = $pdj(window).height()
+    })
+});
+</script>
