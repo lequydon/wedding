@@ -59,7 +59,15 @@
                 })
             }, 5E3)
         });
+        $.ajax({
+        type: "GET",
+        url: "/api/wedding",
+        cache: false,
+        data: dataString,
 
+        success: function(html){
+        console.log(html);
+        }});
     </script>
 </head>
 
